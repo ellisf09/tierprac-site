@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tier Practice | Competitive Minecraft PvP</title>
+    <title>Tier Practice</title>
     <meta name="description" content="Tier Practice is a competitive Minecraft PvP practice server for LT3+ players from MCTiers, Subtiers, and PvPTiers.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#08111d">
@@ -18,6 +18,8 @@
     <meta name="twitter:title" content="Tier Practice | Competitive Minecraft PvP">
     <meta name="twitter:description" content="The competitive Minecraft PvP practice server for LT3+ players.">
     <meta name="twitter:image" content="https://tierprac.xyz/assets/player-render.png">
+    <meta name="keywords"
+content="minecraft practice server, minecraft pvp server, crystal pvp, smp pvp, mctiers, subtiers, pvptiers, tier practice">
 
     <script type="application/ld+json">
         {
@@ -49,7 +51,7 @@
             <a href="#top">Home</a>
             <a href="#features">Features</a>
             <a href="#kits">Kits</a>
-            <a href="#tierlists">Tierlists</a>
+            <a href="leaderboard.html">Leaderboard</a>
             <a href="https://discord.gg/tierprac" target="_blank" rel="noopener noreferrer">Discord</a>
         </div>
     </nav>
@@ -68,12 +70,23 @@
             </h1>
 
             <h2>
-                The Best LT3+ Practice Server.
+                Practice against tiered players. Not random queue warriors.
             </h2>
 
             <p>
-                A polished practice experience for LT3s, with a suite of competitive features, verified tierlists, and high-tiered players. Can you reach the top of the ladder?
+                A polished practice experience for LT3s, with a suite of competitive features, verified tierlists, and high-tiered players. Can you reach HT1?
             </p>
+
+            <div class="hero-stats" aria-label="Tier Practice statistics">
+                <div class="hero-stat">
+                    <strong id="discord-members">—</strong>
+                    <span>Discord members</span>
+                </div>
+                <div class="hero-stat">
+                    <strong id="kit-count">0</strong>
+                    <span>Kits available</span>
+                </div>
+            </div>
 
             <div class="server-status" aria-live="polite">
                 <span class="status-dot" aria-hidden="true"></span>
@@ -114,20 +127,61 @@
         <div class="card-grid">
 
             <div class="info-card">
-                <h3>Ranked Ladder</h3>
-                <p>Queue for competitive matches, test your mechanics, and climb through the ladder.</p>
+                <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                    <path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path>
+                </svg>
+                <h3>Queues</h3>
+                <p>Queue to fight against the best players in their respective modes, improving your skills and getting you ready for competitive play. There's no other server like it, as others queue you against players that have no clue how to play.</p>
             </div>
 
             <div class="info-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 4h12v5a6 6 0 0 1-12 0V4Z"></path>
+                    <path d="M6 7H3v2a4 4 0 0 0 4 4M18 7h3v2a4 4 0 0 1-4 4M12 15v4M8 21h8"></path>
+                </svg>
                 <h3>Tournaments</h3>
-                <p>Compete in organized events and prove yourself against the community’s best players.</p>
+                <p>Compete in organized events and prove yourself against the community's best players. They also usually offer prizes, making them a great way to showcase your skills and win rewards.</p>
             </div>
 
             <div class="info-card">
-                <h3>Custom Events</h3>
-                <p>Take part in community-run challenges, scrims, and special PvP events.</p>
+                <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m13 2-9 12h7l-1 8 9-12h-7l1-8Z"></path>
+                </svg>
+                <h3>Performance</h3>
+                <p>Enjoy our heavily optimised practice environment with the best performance and lowest latency. We also have fixes for knockback, projectiles and other issues.</p>
             </div>
 
+            <div class="info-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    <circle cx="9" cy="6" r="2"></circle>
+                    <circle cx="15" cy="12" r="2"></circle>
+                    <circle cx="11" cy="18" r="2"></circle>
+                </svg>
+                <h3>Customization</h3>
+                <p>Personalize your experience with a range of customization options, from tons of duel settings to your own personal preferences.</p>
+            </div>
+
+            <div class="info-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="9" cy="8" r="3"></circle>
+                    <circle cx="17" cy="9" r="2"></circle>
+                    <path d="M3 20c0-3 2.5-5 6-5s6 2 6 5M15 15c3 0 5 1.8 5 5"></path>
+                </svg>
+                <h3>Community</h3>
+                <p>Learn as you play from feedback and support from our community of the best players in their modes. You can't get that anywhere else other than tier practice.</p>
+            </div>
+
+            <div class="info-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 7h14v10H5zM8 4v3M16 4v3M8 20h8"></path>
+                    <path d="M9 12h6M12 9v6"></path>
+                </svg>
+                <h3>Parties</h3>
+                <p>Play with an unlimited number of people in party fights, with splits, FFAs and more in our wide range of kits and maps.</p>
+            </div>
         </div>
 
     </section>
@@ -137,59 +191,135 @@
         <h2 class="section-heading">
             Kits
         </h2>
-
-        <div class="card-grid">
-
-            <div class="info-card">
-                <h3>Crystal</h3>
-                <p>High-pressure crystal PvP practice for players who want to improve their speed and consistency.</p>
-            </div>
-
-            <div class="info-card">
-                <h3>Sword</h3>
-                <p>Refine spacing, combos, and movement in one of Minecraft’s most competitive formats.</p>
-            </div>
-
-            <div class="info-card">
-                <h3>Axe</h3>
-                <p>Build better fundamentals and make every hit count in axe duels.</p>
-            </div>
-
+        <p class="kit-section-note">A checkmark means Tier Practice is verified for that kit in the corresponding tierlist.</p>
+        <div class="kit-search">
+            <label for="kit-search-input">Find a kit</label>
+            <input id="kit-search-input" type="search" placeholder="Search kits..." autocomplete="off">
         </div>
+        <p class="kit-no-results" id="kit-no-results" hidden>
+            Can't find your kit? <a href="https://discord.gg/tierprac" target="_blank" rel="noopener noreferrer">Request it in Discord</a>.
+        </p>
 
-    </section>
-
-    <section id="tierlists" class="section">
-
-        <h2 class="section-heading">
-            Verified Tier Lists
-        </h2>
-
-        <div class="card-grid">
-
-            <div class="info-card">
-                <h3>MCTiers</h3>
-                <p>Gamemodes we're verified in:</p>
-                <ul>SMP</ul>
-                <ul>Sword</ul>
+        <div class="kit-roster" aria-label="Available kits">
+            <div class="kit-group">
+                <div class="kit-group-heading">
+                    <h3>MCTiers &amp; PvPTiers</h3>
+                    <div class="kit-legend" aria-label="Tierlist indicators">
+                        <span class="tier-badge mctiers">MCTiers</span>
+                        <span class="tier-badge pvptiers">PvPTiers</span>
+                    </div>
+                </div>
+                <div class="kit-list">
+                    <div class="kit-item"><span class="kit-number">00</span><span class="kit-name">Sword</span><span class="kit-badges"><span class="tier-badge mctiers">MCT</span></span></div>
+                    <div class="kit-item"><span class="kit-number">01</span><span class="kit-name">Axe</span><span class="kit-badges"><span class="tier-badge mctiers">MCT</span></span></div>
+                    <div class="kit-item"><span class="kit-number">02</span><span class="kit-name">Mace</span><span class="kit-badges"><span class="tier-badge mctiers">MCT</span></span></div>
+                    <div class="kit-item"><span class="kit-number">03</span><span class="kit-name">Spear Mace</span><span class="kit-badges"></span></div>
+                    <div class="kit-item"><span class="kit-number">04</span><span class="kit-name">SMP</span><span class="kit-badges"><span class="tier-badge mctiers">MCT</span><span class="tier-badge pvptiers">PvPT</span></span></div><!--a-->
+                    <div class="kit-item"><span class="kit-number">05</span><span class="kit-name">UHC</span><span class="kit-badges"><span class="tier-badge mctiers">MCT</span></span></div>
+                    <div class="kit-item"><span class="kit-number">06</span><span class="kit-name">Crystal</span><span class="kit-badges"><span class="tier-badge mctiers">MCT</span></span></div>
+                    <div class="kit-item"><span class="kit-number">07</span><span class="kit-name">Nethpot</span><span class="kit-badges"><span class="tier-badge mctiers">MCT</span></span></div>
+                    <div class="kit-item"><span class="kit-number">08</span><span class="kit-name">Pot</span><span class="kit-badges"><span class="tier-badge mctiers">MCT</span></span></div>
+                </div>
             </div>
 
-            <div class="info-card">
-                <h3>Subtiers</h3>
-                <p>For players ranked LT3+ through the Subtiers system.</p>
+            <div class="kit-group">
+                <div class="kit-group-heading">
+                    <h3>Subtiers</h3>
+                    <div class="kit-legend" aria-label="Tierlist indicators">
+                        <span class="tier-badge subtiers">Subtiers</span>
+                    </div>
+                </div>
+                <div class="kit-list">
+                    <div class="kit-item"><span class="kit-number">09</span><span class="kit-name">Cart (LT/HT)</span><span class="kit-badges"><span class="tier-badge subtiers">Subtiers</span></span></div>
+                    <div class="kit-item"><span class="kit-number">10</span><span class="kit-name">Diamond Crystal</span><span class="kit-badges"><span class="tier-badge subtiers">Subtiers</span></span></div>
+                    <div class="kit-item"><span class="kit-number">11</span><span class="kit-name">Debuff</span><span class="kit-badges"><span class="tier-badge subtiers">Subtiers</span></span></div>
+                    <div class="kit-item"><span class="kit-number">12</span><span class="kit-name">Elytra</span><span class="kit-badges"><span class="tier-badge subtiers">Subtiers</span></span></div>
+                    <div class="kit-item"><span class="kit-number">13</span><span class="kit-name">Speed</span><span class="kit-badges"><span class="tier-badge subtiers">Subtiers</span></span></div>
+                    <div class="kit-item"><span class="kit-number">14</span><span class="kit-name">Manhunt</span><span class="kit-badges"><span class="tier-badge subtiers">Subtiers</span></span></div>
+                    <div class="kit-item"><span class="kit-number">15</span><span class="kit-name">Creeper</span><span class="kit-badges"><span class="tier-badge subtiers">Subtiers</span></span></div>
+                    <div class="kit-item"><span class="kit-number">16</span><span class="kit-name">Diamond SMP</span><span class="kit-badges"><span class="tier-badge subtiers">Subtiers</span></span></div>
+                    <div class="kit-item"><span class="kit-number">17</span><span class="kit-name">Bow</span><span class="kit-badges"><span class="tier-badge subtiers">Subtiers</span></span></div>
+                    <div class="kit-item"><span class="kit-number">18</span><span class="kit-name">Bed (LT/HT)</span><span class="kit-badges"></span></div>
+                    <div class="kit-item"><span class="kit-number">19</span><span class="kit-name">OG Vanilla</span><span class="kit-badges"><span class="tier-badge subtiers">Subtiers</span></span></div>
+                    <div class="kit-item"><span class="kit-number">20</span><span class="kit-name">Trident</span><span class="kit-badges"><span class="tier-badge subtiers">Subtiers</span></span></div>
+                </div>
             </div>
 
-            <div class="info-card">
-                <h3>PvPTiers</h3>
-                <p>For players with an LT3+ PvPTiers ranking.</p>
+            <div class="kit-group late-game">
+                <div class="kit-group-heading"><h3>Late Game</h3><span class="kit-group-note">Late-game variants</span></div>
+                <div class="kit-list">
+                    <div class="kit-item"><span class="kit-number">21</span><span class="kit-name">SMP</span></div>
+                    <div class="kit-item"><span class="kit-number">22</span><span class="kit-name">Nethpot</span></div>
+                    <div class="kit-item"><span class="kit-number">23</span><span class="kit-name">Creeper</span></div>
+                    <div class="kit-item"><span class="kit-number">24</span><span class="kit-name">Debuff</span></div>
+                    <div class="kit-item"><span class="kit-number">25</span><span class="kit-name">Diamond SMP</span></div>
+                    <div class="kit-item"><span class="kit-number">26</span><span class="kit-name">Elytra</span></div>
+                    <div class="kit-item"><span class="kit-number">27</span><span class="kit-name">Trident</span></div>
+                    <div class="kit-item"><span class="kit-number">28</span><span class="kit-name">UHC</span></div>
+                </div>
             </div>
 
+            <div class="kit-group">
+                <div class="kit-group-heading"><h3>Other Kits</h3><span class="kit-group-note">Random selections</span></div>
+                <div class="kit-list">
+                    <div class="kit-item"><span class="kit-number">29</span><span class="kit-name">Diamond Mace</span></div>
+                    <div class="kit-item"><span class="kit-number">30</span><span class="kit-name">Axe Pot</span></div>
+                    <div class="kit-item"><span class="kit-number">31</span><span class="kit-name">Decorated Pot</span></div>
+                    <div class="kit-item"><span class="kit-number">32</span><span class="kit-name">Lifesteal</span></div>
+                    <div class="kit-item"><span class="kit-number">33</span><span class="kit-name">OG Mace</span></div>
+                    <div class="kit-item"><span class="kit-number">34</span><span class="kit-name">Rod Mace</span></div>
+                    <div class="kit-item"><span class="kit-number">35</span><span class="kit-name">Shieldless SMP</span></div>
+                    <div class="kit-item"><span class="kit-number">36</span><span class="kit-name">Elytra Spear</span></div>
+                    <div class="kit-item"><span class="kit-number">37</span><span class="kit-name">Pufferfish</span></div>
+                    <div class="kit-item"><span class="kit-number">38</span><span class="kit-name">Iron Vanilla</span></div>
+                    <div class="kit-item"><span class="kit-number">39</span><span class="kit-name">Crossbow</span></div>
+                    <div class="kit-item"><span class="kit-number">40</span><span class="kit-name">Neth Sword</span></div>
+                    <div class="kit-item"><span class="kit-number">41</span><span class="kit-name">Iron Pot</span></div>
+                    <div class="kit-item"><span class="kit-number">42</span><span class="kit-name">Iron UHC</span></div>
+                    <div class="kit-item"><span class="kit-number">43</span><span class="kit-name">Diamond Cart</span></div>
+                    <div class="kit-item"><span class="kit-number">44</span><span class="kit-name">Shieldless</span></div>
+                    <div class="kit-item"><span class="kit-number">45</span><span class="kit-name">Modern</span></div>
+                    <div class="kit-item"><span class="kit-number">46</span><span class="kit-name">Diamond OP</span></div>
+                    <div class="kit-item"><span class="kit-number">47</span><span class="kit-name">TNT</span></div>
+                    <div class="kit-item"><span class="kit-number">48</span><span class="kit-name">Crystal (HT)</span></div>
+                    <div class="kit-item"><span class="kit-number">49</span><span class="kit-name">Shieldless UHC</span></div>
+                    <div class="kit-item"><span class="kit-number">50</span><span class="kit-name">Mysti</span></div>
+                    <div class="kit-item"><span class="kit-number">51</span><span class="kit-name">Elytra (OG)</span></div>
+                    <div class="kit-item"><span class="kit-number">52</span><span class="kit-name">Cast PvP</span></div>
+                    <div class="kit-item"><span class="kit-number">53</span><span class="kit-name">Early Game</span></div>
+                    <div class="kit-item"><span class="kit-number">54</span><span class="kit-name">Trident Mace</span></div>
+                    <div class="kit-item"><span class="kit-number">55</span><span class="kit-name">Quick PvP</span></div>
+                    <div class="kit-item"><span class="kit-number">56</span><span class="kit-name">Harm Pot</span></div>
+                    <div class="kit-item"><span class="kit-number">57</span><span class="kit-name">UHC Mace</span></div>
+                    <div class="kit-item"><span class="kit-number">58</span><span class="kit-name">Rod Mace V2</span></div>
+                    <div class="kit-item"><span class="kit-number">59</span><span class="kit-name">Firework Mace</span></div>
+                    <div class="kit-item"><span class="kit-number">60</span><span class="kit-name">Door PvP</span></div>
+                    <div class="kit-item"><span class="kit-number">61</span><span class="kit-name">Leather Pot</span></div>
+                    <div class="kit-item"><span class="kit-number">62</span><span class="kit-name">Modify</span></div>
+                    <div class="kit-item"><span class="kit-number">63</span><span class="kit-name">Neth Sword 2</span></div>
+                    <div class="kit-item"><span class="kit-number">64</span><span class="kit-name">SMP (KB2)</span></div>
+                    <div class="kit-item"><span class="kit-number">65</span><span class="kit-name">Axe Pot</span></div>
+                    <div class="kit-item"><span class="kit-number">66</span><span class="kit-name">Diamond Mace</span></div>
+                    <div class="kit-item"><span class="kit-number">67</span><span class="kit-name">Neth Sword</span></div>
+                    <div class="kit-item"><span class="kit-number">68</span><span class="kit-name">NoDebuff</span></div>
+                    <div class="kit-item"><span class="kit-number">69</span><span class="kit-name">Private SMP</span></div>
+                    <div class="kit-item"><span class="kit-number">70</span><span class="kit-name">Creeper (Legacy)</span></div>
+                    <div class="kit-item"><span class="kit-number">71</span><span class="kit-name">Primal</span></div>
+                    <div class="kit-item"><span class="kit-number">72</span><span class="kit-name">Money SMP</span></div>
+                    <div class="kit-item"><span class="kit-number">73</span><span class="kit-name">Sumo</span></div>
+                    <div class="kit-item"><span class="kit-number">74</span><span class="kit-name">Flare</span></div>
+                    <div class="kit-item"><span class="kit-number">75</span><span class="kit-name">Flare (EOTW)</span></div>
+                    <div class="kit-item"><span class="kit-number">76</span><span class="kit-name">Speed UHC</span></div>
+                    <div class="kit-item"><span class="kit-number">77</span><span class="kit-name">Pufferfish (Egg)</span></div>
+                    <div class="kit-item"><span class="kit-number">78</span><span class="kit-name">Pufferfish (HT)</span></div>
+                </div>
+            </div>
         </div>
 
     </section>
 
     <footer>
-        <p>© 2026 Tier Practice. Competitive Minecraft PvP.</p>
+        <p>© 2026 Tier Practice.</p>
     </footer>
 
     <div class="modal-backdrop" id="join-modal" hidden>
@@ -200,7 +330,6 @@
             <p class="modal-intro">Tier Practice is for verified LT3+ players. Follow these steps to get started:</p>
 
             <ol class="join-steps">
-                <!-- make the boost text purple pink gradient -->
                 <li><strong>Meet the requirement.</strong> You must be LT3 or higher in an MCTiers, Subtiers, or PvPTiers mode. Alternatively, you can <span class="boost-text">boost the Discord server</span> to get access, along with trims as a special thank you!</li>
                 <li><strong>Add the server.</strong> Enter <code>tierprac.xyz</code> as the server address.</li>
                 <li><strong>Join the community.</strong> Check Discord for verification, events, and updates.</li>

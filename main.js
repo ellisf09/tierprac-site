@@ -1,5 +1,6 @@
 const SERVER_IP = "tierprac.xyz";
 const STATUS_URL = "https://api.mcsrvstat.us/3/tierprac.xyz";
+const DISCORD_INVITE_URL = "https://discord.com/api/v10/invites/tierprac?with_counts=true";
 
 const copyButton = document.getElementById("copy-ip");
 const modalCopyButton = document.getElementById("modal-copy-ip");
@@ -8,6 +9,10 @@ const modal = document.getElementById("join-modal");
 const closeModalButton = document.getElementById("close-modal");
 const serverStatus = document.getElementById("server-status");
 const statusDot = document.querySelector(".status-dot");
+const discordMembers = document.getElementById("discord-members");
+const kitCount = document.getElementById("kit-count");
+const kitSearchInput = document.getElementById("kit-search-input");
+const kitNoResults = document.getElementById("kit-no-results");
 
 async function copyIP(button) {
     try {
@@ -78,6 +83,54 @@ async function updateServerStatus() {
     }
 }
 
+async function updateDiscordMembers() {
+    try {
+        const response = await fetch(DISCORD_INVITE_URL);
+        if (!response.ok) {
+            throw new Error(`Discord API returned ${response.status}.`);
+        }
+
+        const invite = await response.json();
+        const members = invite.approximate_member_count;
+        if (typeof members !== "number") {
+            throw new Error("Discord invite did not include a member count.");
+        }
+
+        discordMembers.textContent = members.toLocaleString();
+    } catch (error) {
+        console.error("Could not load Discord member count:", error);
+        discordMembers.textContent = "—";
+    }
+}
+
+function updateKitCount() {
+    const kits = document.querySelectorAll("#kits .kit-item");
+    kitCount.textContent = kits.length.toString();
+    kits.forEach((kit, index) => {
+        const number = kit.querySelector(".kit-number");
+        number.textContent = String(index + 1).padStart(2, "0");
+    });
+}
+
+function filterKits() {
+    const query = kitSearchInput.value.trim().toLowerCase();
+    let visibleKits = 0;
+
+    document.querySelectorAll("#kits .kit-group").forEach((group) => {
+        let visibleInGroup = 0;
+        group.querySelectorAll(".kit-item").forEach((kit) => {
+            const name = kit.querySelector(".kit-name").textContent.toLowerCase();
+            const isVisible = !query || name.includes(query);
+            kit.hidden = !isVisible;
+            visibleInGroup += isVisible ? 1 : 0;
+            visibleKits += isVisible ? 1 : 0;
+        });
+        group.hidden = visibleInGroup === 0;
+    });
+
+    kitNoResults.hidden = visibleKits > 0;
+}
+
 playButton.addEventListener("click", openModal);
 closeModalButton.addEventListener("click", closeModal);
 copyButton.addEventListener("click", () => copyIP(copyButton));
@@ -96,4 +149,8 @@ document.addEventListener("keydown", (event) => {
 });
 
 updateServerStatus();
+updateDiscordMembers();
+updateKitCount();
+kitSearchInput.addEventListener("input", filterKits);
 window.setInterval(updateServerStatus, 60000);
+window.setInterval(updateDiscordMembers, 300000);
